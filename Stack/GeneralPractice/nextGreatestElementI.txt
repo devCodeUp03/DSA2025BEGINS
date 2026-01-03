@@ -1,0 +1,34 @@
+Dry run
+
+nums1 = [4,1,2], nums2 = [1,3,4,2]
+
+
+stack = []
+nge = {}
+
+
+when num(1):
+    stack.append(num) // [1]
+
+when num(3):
+    nge[stack.pop()] = num // {1: 3}, []
+    stack.append(num) //[3]
+
+when num(4):
+    nge[stack.pop()] = num // {1: 3, 3: 4}, []
+    stack.append(num) // [4]
+
+when num(2):
+    stack.append(num) //[4, 2]
+
+
+while stack:
+    nge[stack.pop()] = -1 
+
+// nge = {1: 3, 3: 4, 4: -1, 2: -1}
+
+
+ans = [nge[num] for num in nums1] // [-1, 3, -1]
+
+
+

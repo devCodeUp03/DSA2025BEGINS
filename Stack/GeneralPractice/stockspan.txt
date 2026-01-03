@@ -1,0 +1,19 @@
+dry run 
+
+input: [[],[100],[80],[60],[70],[60],[75],[85]]
+
+stack = []
+span = 1
+
+while stack and stack[-1][0] <= price:
+    stack.append((price,span)) // [(100, 1)]
+return span // 1
+
+while ...
+    span = 1
+    span += stack.pop()[1] // 1 + 1
+
+stack.append((price, span)) // [(80, 2)] and so on 
+
+return span
+
