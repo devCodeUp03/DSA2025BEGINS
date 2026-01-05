@@ -1,0 +1,78 @@
+dry run
+
+input:
+heights = [2,1,5,6,2,3]
+           0 1 2 3 4 5
+
+initially 
+stack  = []
+max_area = 0
+
+heights.append(0) //sentinel bar
+
+when i = 0:
+    stack.append(i) // [0]
+
+when i = 1:
+    h = heights[stack.pop()] // h = heights[0] = 2
+
+    if not stack:
+        width = i // width = 1
+    
+
+    max_area = max(max_area, h * width) // max(0, 2 * 1) = 2
+
+    stack.append(i) // [1]
+
+heights = [2,1,5,6,2,3]
+           0 1 2 3 4 5
+
+when i = 2:
+    stack.append(i) // 2 => [1, 2]
+
+when i = 3:
+    stack.append(i) // 3 => [1,2,3]
+
+when i = 4:
+    h = heights[stack.pop()] // heights[3] = 6 => [1, 2]
+    else:
+        width = i - stack[-1] - 1 = 4 - 2 - 1 = 1
+    max_area = max(max_area, h * width) = max(2, 6 * 1) = 6
+
+    h = heights(stack.pop()) // heights[2] = 5 => [1]
+
+    else:
+        width = i - stack[-1] - 1 = 4 - 1 - 1 = 2
+    
+    max_area = max(6, 5 * 2) // 10
+
+
+    stack.append(i) // [1, 4]
+
+
+when i = 5:
+    stack.append(i) // [1, 4, 5]
+
+return max_area // 10
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+

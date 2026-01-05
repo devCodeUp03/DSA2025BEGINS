@@ -1,0 +1,56 @@
+Dry run
+input: [1, 2, 3, 4, 3]
+        0  1  2  3  4
+
+n = 5
+res = [-1] * 5
+stack = []
+
+when i = 0:
+    curr = nums[i%n] //0%5 = 1
+
+    stack.append(i) // 0 => [0]
+
+when i = 1:
+    curr = nums[i%n] // nums[1%5] = 2
+
+    idx = stack.pop() // 0 => []
+    res[idx] = curr // => res [2]
+
+    stack.append(i) // 1 => [1]
+
+when i = 2:
+    curr = 3
+    idx = stack.pop() => []
+    res = [2, 3]
+
+    stack = [2]
+
+    ...
+
+
+whne i = 4:
+    curr = 3
+    stack.append(i) // [3, 4]
+
+
+when i = 5:
+    curr = nums[5 % 5] = nums[0] = 1
+    ...
+when i = 6:
+    curr = nums[1] = 2
+when i = 7:
+    curr = nums[2] = 3
+when i = 8:
+    curr = nums[3] = 4
+    idx = stack.pop()// 4 [3]
+    res[idx] = curr // [2, 3, 4, -1, 4]
+when i = 9:
+    curr = nums[4] = 3 
+    
+ 
+
+
+
+
+
